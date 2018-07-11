@@ -5,6 +5,10 @@ html {
     height: 100%; 
 }
 
+.navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar{
+    background-color:#25749E
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
