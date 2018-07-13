@@ -2,13 +2,93 @@
 
 <html>
     <head>
-        <title>Image portfolio</title>
+        <title>Gallery | Carlos Hernández</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="gallery.css">
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="css/mdb.min.css" rel="stylesheet">
+        <!-- Your custom styles (optional) -->
+        <link href="css/style.min.css" rel="stylesheet">
+        <style type="text/css">
+            @media (min-width: 800px) and (max-width: 850px) {
+                .navbar:not(.top-nav-collapse) {
+                    background: #4488AC!important;
+                }
+            }
+        </style>
+        <link href="landing.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Life in the wild</h1>
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+            <div class="container">
+
+                <!-- Brand -->
+                <a class="navbar-brand" href="home.html">
+                    <strong>CarlosSHB</strong>
+                </a>
+
+                <!-- Collapse -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <!-- Left -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="home.html">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">About me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html" >Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">My favorite songs</a>
+                        </li>
+                    </ul>
+
+                    <!-- Right -->
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item">
+                            <a href="https://www.facebook.com/TheCarlosSamuel" class="nav-link" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://twitter.com/OneMoreCarlos" class="nav-link" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://github.com/Carls13" class="nav-link border border-light rounded"
+                               target="_blank">
+                                <i class="fa fa-github mr-2">CARLS13</i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </nav>
+        <!-- Navbar -->
+
+
         <div class="container">
             <img src="https://static.pexels.com/photos/52500/horse-herd-fog-nature-52500.jpeg
                  ">
@@ -20,5 +100,71 @@
             <img src="https://static.pexels.com/photos/133459/pexels-photo-133459.jpeg">
             <img src="https://static.pexels.com/photos/50988/ape-berber-monkeys-mammal-affchen-50988.jpeg">
         </div>
+
+        <!--Footer-->
+        <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+            <!--Call to action-->
+            <div class="pt-4">
+                <a class="btn btn-outline-white" href="https://mdbootstrap.com/getting-started/" target="_blank" role="button">Download MDB
+                    <i class="fa fa-download ml-2"></i>
+                </a>
+                <a class="btn btn-outline-white" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank" role="button">Start free tutorial
+                    <i class="fa fa-graduation-cap ml-2"></i>
+                </a>
+            </div>
+            <!--/.Call to action-->
+
+            <hr class="my-4">
+
+            <!-- Social icons -->
+            <div class="pb-4">
+                <h5>Follow me </h5>
+
+                <a href="https://www.facebook.com/TheCarlosSamuel" target="_blank">
+                    <i class="fa fa-facebook mr-3"></i>
+                </a>
+
+                <a href="https://twitter.com/OneMoreCarlos" target="_blank">
+                    <i class="fa fa-twitter mr-3"></i>
+                </a>
+
+                <a href="https://plus.google.com/u/0/114102298323708061224" target="_blank">
+                    <i class="fa fa-google-plus mr-3"></i>
+                </a>
+
+                <a href="https://github.com/Carls13" target="_blank">
+                    <i class="fa fa-github mr-3"></i>
+                </a>
+                <a href="https://www.instagram.com/carlosshb98/" target="_blank">
+                    <i class="fa fa-instagram mr-3"></i>
+                </a>
+
+            </div>
+            <!-- Social icons -->
+
+            <!--Copyright-->
+            <div class="footer-copyright py-3">
+                © 2018 Copyright: Carlos Hernández, Venezuela.                 
+            </div>
+            <!--/.Copyright-->
+
+        </footer>
+        <!--/.Footer-->
+
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <!-- Initializations -->
+        <script type="text/javascript">
+            // Animations initialization
+            new WOW().init();
+        </script>
     </body>
 </html>

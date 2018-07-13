@@ -5,6 +5,11 @@ html {
     height: 100%; 
 }
 
+h3{
+    margin-top:1px;
+}
+
+
 .navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar{
     background-color:#25749E
 }
