@@ -1,0 +1,37 @@
+hr {
+    max-width: 65px;
+    border-width: 3px;
+    border-color: #024656; 
+}
+.form-control{
+    width:100px;
+    height: 30px;
+    margin-bottom:20px;
+}
+.complex-number{
+    padding-right: 100px;
+}
+
+.container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h3 {
+    text-align: center;
+    padding-bottom: 5px;
+   
+}
+.buttons{
+}
+#clear{
+}
+.btn btn-primary{
+
+}
+.btn btn-primary:hover{
+    transform: scale(1.1);
+
+
+}

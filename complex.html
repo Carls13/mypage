@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>My favorite songs | Carlos Hernández</title>
+        <title>Complex calculator | Carlos Hernández</title>
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Bootstrap core CSS -->
@@ -21,12 +21,10 @@
                 }
             }
         </style>
-        <link href="gallery.css" rel="stylesheet">
-
+        <link href="complex.css" rel="stylesheet">
     </head>
 
     <body>
-
         <!-- Navbar -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
             <div class="container">
@@ -53,7 +51,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="home.html">About me</a>
+                            <a class="nav-link" href="about.html">About me</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="gallery.html" >Gallery</a>
@@ -89,51 +87,62 @@
         </nav>
         <!-- Navbar -->
 
+
         <!--Main layout-->
-        <main>
+        <main class="mt-5 pt-5">
+            <h3 class="h3 text-center mb-5">Complex numbers calculator</h3>
+
             <div class="container">
 
 
-                <!--Section: Main features & Quick Start-->
-                <section>
-                    <br>
+                <div class="complex-number">
+                    <h3><b>Complex 1</b></h3>
 
-                    <h3 class="h3 text-center mb-5">Favorite</h3>
+                    <span class="form-group">
+                        <label for="exampleInputEmail1">Re(z1)</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" >
+                    </span>
+                    <span class="form-group">
+                        <label for="exampleInputEmail1">Im(z1)</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" >
+                    </span>
+                </div>
+                <div class="complex-number">
+                    <h3><b>Complex 2</b></h3>
+                    <span class="form-group">
+                        <label for="exampleInputEmail1">Re(z2)</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" >
+                    </span>
+                    <span class="form-group">
+                        <label for="exampleInputEmail1">Im(z2)</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" >
+                    </span>                        
+                </div>
+                <div class="complex-number">
+                    <h3><b>Results</b></h3>
+                    <h5 class="h5 text-center mb-5" >Forma binómica: </h5>
+                    <h5 class="h5 text-center mb-5" ></h5>
+                    <h5 class="h5 text-center mb-5" >Forma fasorial: </h5>
+                    <h5 class="h5 text-center mb-5" ></h5>
+                </div>
 
-                    <!--Grid column-->
-                    <div class="container">
+                <div>                                                    
+                    <button id="clear" type="submit" class="btn btn-primary">Clear                                
+                        <i class="fa fa-image ml-1"></i>
+                    </button>
+                    <button id="clear" type="submit" class="btn btn-primary">Clear                                
+                        <i class="fa fa-image ml-1"></i>
+                    </button>
+                                    </div>
 
+                <span class="container">
 
-                        <!--/Grid column-->
-                        <p class="h5 text-center mb-4">Caramelos de Cianuro - El instante pasó</p>
-                        <p class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/3fRZkS4OxMk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <p class="h5 text-center mb-4">Gustavo Cerati - Adiós</p>
-                        <p class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/gH8YP4E5gjo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
-                            <!--/Grid column-->
-                        <p class="h5 text-center mb-4">Max Richter - On the Nature of Daylight</p>
-                        <p class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/rVN1B-tUpgs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                            <!--/Grid column-->
-                        <p class="h5 text-center mb-4">The Sims™ 2 Soundtrack: Main Theme</p>
-                        <p class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/lF90l7zWHMg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>                           
-                            <!--/Grid column-->
-                        <p class="h5 text-center mb-4">Skott - Porcelain</p>
-                        <p class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/DfTUs-s_XkI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                            <!--/Grid column-->
+                    <button id="sum" type="submit" class="btn btn-primary">+</button>
+                    <button id ="subtraction" type="submit" class="btn btn-primary">-</button>
+                    <button id="product" type="submit" class="btn btn-primary">x</button>
+                    <button id="division" type="submit" class="btn btn-primary">/</button>
+                </span>
 
-                        <p class="h5 text-center mb-4">Max Capote - Culpable</p>
-                        <p class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/5RzfVCgutvM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>                           
-
-                    </div>
-                    <!--/Grid row-->
-
-                </section>
-                <!--Section: Main features & Quick Start-->
 
             </div>
         </main>
@@ -202,4 +211,3 @@
     </body>
 
 </html>
-
