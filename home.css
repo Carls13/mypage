@@ -3,3 +3,8 @@ hr {
     border-width: 3px;
     border-color: #024656; 
 }
+
+img{
+    width:300px;
+    height:100px;       
+}

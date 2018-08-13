@@ -5,6 +5,10 @@ img{
     transition: all 1s;
 
 }
+main{
+    padding-top:65px;
+}
+
 .container{
     display:flex;
     flex-wrap: wrap;
