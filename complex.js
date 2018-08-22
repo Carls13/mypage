@@ -18,7 +18,7 @@ function newComplex(real, imaginary) {
         imaginaryPart: imaginary,
         module: Math.sqrt(Math.pow(real, 2) + Math.pow(imaginary, 2)),
         //Argument in radians
-        argument: Math.atan2(imaginary, real)
+        argument: toDegrees(Math.atan2(imaginary, real))
     };
     return complex;
 }
@@ -38,13 +38,16 @@ function printFormaBinomica(z) {
     } else if (z.imaginaryPart < 0) {
         result += z.imaginaryPart + "j";
     }
+  if (z.realPart ===0 && z.imaginaryPart===0){
+      result = 'Forma binómica: 0';
+  }
     binomicaH3.innerHTML = result;
 
 }
 
 //prints in phasor form
 function printPhasorForm(z) {
-    var result = "Forma fasorial: " + z.module + ' ∠' + toDegrees(z.argument) + '°';
+    var result = `Forma fasorial: ${Number(z.module).toFixed(2)} ∠${Number(z.argument).toFixed(2)}°`;
 
     fasorialH3.innerHTML = result;
 

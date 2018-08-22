@@ -21,7 +21,7 @@ hr {
 h3 {
     text-align: center;
     padding-bottom: 5px;
-   
+
 }
 .buttons{
 }
@@ -34,4 +34,10 @@ h3 {
     transform: scale(1.1);
 
 
+}
+#binomicaResult{
+    text-align:left;
+}
+#fasorialResult{
+    text-align:left;
 }
