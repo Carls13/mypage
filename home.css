@@ -10,11 +10,16 @@ img{
 }
 
 .welcome-image{
-    width:68em;
+
+    width:100%;
     height:30em;
     margin-bottom: 2em;
+    float:left;
 }
 
 .pt-5{
     margin-top: 0px;
+}
+* {
+    box-sizing: border-box;
 }
