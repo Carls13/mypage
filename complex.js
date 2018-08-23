@@ -10,47 +10,43 @@ divBtn = document.getElementById('division');
 binomicaH3 = document.getElementById('binomicaResult');
 fasorialH3 = document.getElementById('fasorialResult');
 
-
-//initializes Complex object
-function newComplex(real, imaginary) {
-    var complex = {
-        realPart: real,
-        imaginaryPart: imaginary,
-        module: Math.sqrt(Math.pow(real, 2) + Math.pow(imaginary, 2)),
-        //Argument in radians
-        argument: toDegrees(Math.atan2(imaginary, real))
-    };
-    return complex;
-}
-
-//prints in binomial form
-function printFormaBinomica(z) {
-    var result = "Forma binómica: ";
-    if (z.realPart !== 0) {
-        result += z.realPart + " ";
+//Complex number
+class Complex {
+    constructor(real, imaginary) {
+        this.real = real;
+        this.imaginary = imaginary;
+        this.module = Math.sqrt(Math.pow(real, 2) + Math.pow(imaginary, 2));
+        //Argument in degrees
+        this.argument = toDegrees(Math.atan2(imaginary, real));
     }
-    if (z.imaginaryPart > 0) {
-        if (z.realPart !== 0) {
-            result += '+' + z.imaginaryPart + "j";
-        } else {
-            result += z.imaginaryPart + "j";
+    //prints in phasor form
+    printPhasorForm() {
+        var result = `Forma fasorial: ${Number(this.module).toFixed(2)} 
+                        ∠${Number(this.argument).toFixed(2)}°`;
+
+        fasorialH3.innerHTML = result;
+
+    }
+    //prints in binomial form
+    printFormaBinomica() {
+        var result = "Forma binómica: ";
+        if (this.real !== 0) {
+            result += (this.real).toFixed(2) + " ";
         }
-    } else if (z.imaginaryPart < 0) {
-        result += z.imaginaryPart + "j";
+        if (this.imaginary > 0) {
+            if (this.real !== 0) {
+                result += '+' + (this.imaginary).toFixed(2) + "j";
+            } else {
+                result += (this.imaginary).toFixed(2) + "j";
+            }
+        } else if (this.imaginary < 0) {
+            result += (this.imaginary).toFixed(2) + "j";
+        }
+        if (this.real === 0 && this.imaginary === 0) {
+            result = 'Forma binómica: 0';
+        }
+        binomicaH3.innerHTML = result;
     }
-  if (z.realPart ===0 && z.imaginaryPart===0){
-      result = 'Forma binómica: 0';
-  }
-    binomicaH3.innerHTML = result;
-
-}
-
-//prints in phasor form
-function printPhasorForm(z) {
-    var result = `Forma fasorial: ${Number(z.module).toFixed(2)} ∠${Number(z.argument).toFixed(2)}°`;
-
-    fasorialH3.innerHTML = result;
-
 }
 
 //transforms radians to degrees
@@ -62,77 +58,75 @@ function toDegrees(radians) {
 //complex sum
 function sum() {
     //Intitializes sumands
-    var z1 = newComplex(Number(rez1.value), Number(imz1.value));
-    var z2 = newComplex(Number(rez2.value), Number(imz2.value));
+    var z1 = new Complex(Number(rez1.value), Number(imz1.value));
+    var z2 = new Complex(Number(rez2.value), Number(imz2.value));
 
     //Gets new complex
-    var rez3 = z1.realPart + z2.realPart;
-    var imz3 = z1.imaginaryPart + z2.imaginaryPart;
-    var z3 = newComplex(rez3, imz3);
+    var rez3 = z1.real + z2.real;
+    var imz3 = z1.imaginary + z2.imaginary;
+    var z3 = new Complex(rez3, imz3);
 
     //Prints result
-    printFormaBinomica(z3);
-    printPhasorForm(z3);
+    z3.printFormaBinomica();
+    z3.printPhasorForm();
 }
 
 //complex substraction
 function substract() {
     //Intitializes sumands
-    var z1 = newComplex(Number(rez1.value), Number(imz1.value));
-    var z2 = newComplex(Number(rez2.value), Number(imz2.value));
+    var z1 = new Complex(Number(rez1.value), Number(imz1.value));
+    var z2 = new Complex(Number(rez2.value), Number(imz2.value));
 
     //Gets new complex
-    var rez3 = z1.realPart - z2.realPart;
-    var imz3 = z1.imaginaryPart - z2.imaginaryPart;
-    var z3 = newComplex(rez3, imz3);
-
+    var rez3 = z1.real - z2.real;
+    var imz3 = z1.imaginary - z2.imaginary;
+    var z3 = new Complex(rez3, imz3);
 
     //Prints result
-    printFormaBinomica(z3);
-    printPhasorForm(z3);
+    z3.printFormaBinomica();
+    z3.printPhasorForm();
 
 }
 
 //complex product
 function multiply() {
     //Intitializes sumands
-    var z1 = newComplex(Number(rez1.value), Number(imz1.value));
-    var z2 = newComplex(Number(rez2.value), Number(imz2.value));
+    var z1 = new Complex(Number(rez1.value), Number(imz1.value));
+    var z2 = new Complex(Number(rez2.value), Number(imz2.value));
 
     //Gets new complex
-    var rez3 = (z1.realPart * z2.realPart) - (z1.imaginaryPart * z2.imaginaryPart);
-    var imz3 = (z1.realPart * z2.imaginaryPart) + (z1.imaginaryPart * z2.realPart);
-    var z3 = newComplex(rez3, imz3);
-
+    var rez3 = (z1.real * z2.real) - (z1.imaginary * z2.imaginary);
+    var imz3 = (z1.real * z2.imaginary) + (z1.imaginary * z2.real);
+    var z3 = new Complex(rez3, imz3);
 
     //Prints result
-    printFormaBinomica(z3);
-    printPhasorForm(z3);
+    z3.printFormaBinomica();
+    z3.printPhasorForm();
 
 }
 
 //complex division
 function divide() {
     //Intitializes sumands
-    var z1 = newComplex(Number(rez1.value), Number(imz1.value));
-    var z2 = newComplex(Number(rez2.value), Number(imz2.value));
+    var z1 = new Complex(Number(rez1.value), Number(imz1.value));
+    var z2 = new Complex(Number(rez2.value), Number(imz2.value));
 
     try {//Checks division by null Complex
-        if (z2.realPart === 0 && z2.imaginaryPart === 0) {
+        if (z2.real === 0 && z2.imaginary === 0) {
             throw('Cannot divide by zero');
         }
 
         //Gets new complex
-        var rez3 = ((z1.realPart * z2.realPart) + (z1.imaginaryPart * z2.imaginaryPart)) /
-                (Math.pow(z2.realPart, 2) + Math.pow(z2.imaginaryPart, 2));
-        var imz3 = ((z1.imaginaryPart * z2.realPart) - (z1.realPart * z2.imaginaryPart)) /
-                (Math.pow(z2.realPart, 2) + Math.pow(z2.imaginaryPart, 2));
-        var z3 = newComplex(rez3, imz3);
-
+        var rez3 = ((z1.real * z2.real) + (z1.imaginary * z2.imaginary)) /
+                (Math.pow(z2.real, 2) + Math.pow(z2.imaginary, 2));
+        var imz3 = ((z1.imaginary * z2.real) - (z1.real * z2.imaginary)) /
+                (Math.pow(z2.real, 2) + Math.pow(z2.imaginary, 2));
+        var z3 = new Complex(rez3, imz3);
 
         //Prints result
-        printFormaBinomica(z3);
-        printPhasorForm(z3);
+        z3.printFormaBinomica();
+        z3.printPhasorForm();
+
 
     } catch (e) {
         alert(e);
