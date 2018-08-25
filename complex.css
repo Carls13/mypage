@@ -24,17 +24,14 @@ hr {
     border-radius: 8px;
 }
 
-h3 {
-    text-align: center;
+h4 {
+    text-align: center !important;
     padding-bottom: 5px;
 
 }
-.buttons{
-}
-#clear{
-}
-#id{
-    background:red !important;
+
+.btn{
+    background:#024656 !important;
 }
 .btn btn-primary:hover{
     transform: scale(1.1);

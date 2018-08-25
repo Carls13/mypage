@@ -5,6 +5,12 @@ img{
     transition: all 1s;
 
 }
+.btn{
+    background:#024656 !important;
+}
+/*.feature-title{
+    font-weight: bold;
+}*/
 main{
     padding-top:65px;
 }
