@@ -13,19 +13,24 @@ hr {
     position:static;
 }
 
+.form-group{
+    display:inline-block ;
+}
+
 .container{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-#calculator{
-    border: 2px solid #024656;
-    border-radius: 8px;
+.operations{
+    margin-bottom: 5%;
 }
 
+
+
 h4 {
-    text-align: center !important;
+    text-align: center ;
     padding-bottom: 5px;
 
 }
@@ -33,7 +38,7 @@ h4 {
 .btn{
     background:#024656 !important;
 }
-.btn btn-primary:hover{
+.btn:hover{
     transform: scale(1.1);
 
 

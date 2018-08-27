@@ -1,14 +1,19 @@
 //Gets elements
-rez1 = document.getElementById('rez1');
-rez2 = document.getElementById('rez2');
-imz1 = document.getElementById('imz1');
-imz2 = document.getElementById('imz2');
-sumBtn = document.getElementById('sum');
-subsBtn = document.getElementById('substraction');
-prodBtn = document.getElementById('product');
-divBtn = document.getElementById('division');
-binomicaH3 = document.getElementById('binomicaResult');
-fasorialH3 = document.getElementById('fasorialResult');
+const rez1 = document.getElementById('rez1');
+const rez2 = document.getElementById('rez2');
+const rez = document.getElementById('rez');
+const imz1 = document.getElementById('imz1');
+const imz2 = document.getElementById('imz2');
+const imz = document.getElementById('imz');
+const sumBtn = document.getElementById('sum');
+const subsBtn = document.getElementById('substraction');
+const prodBtn = document.getElementById('product');
+const divBtn = document.getElementById('division');
+const clearBtn = document.getElementById('clear');
+const binToFasBtn = document.getElementById('binToFasBtn');
+const binomicaH3 = document.getElementById('binomicaResult');
+const fasorialH3 = document.getElementById('fasorialResult');
+const fasorialTransH3 = document.getElementById('binTransResult');
 
 //Complex number
 class Complex {
@@ -20,15 +25,15 @@ class Complex {
         this.argument = toDegrees(Math.atan2(imaginary, real));
     }
     //prints in phasor form
-    printPhasorForm() {
+    printPhasorForm(element) {
         var result = `Forma fasorial: ${Number(this.module).toFixed(2)} 
                         ∠${Number(this.argument).toFixed(2)}°`;
 
-        fasorialH3.innerHTML = result;
+        element.innerHTML = result;
 
     }
     //prints in binomial form
-    printFormaBinomica() {
+    printFormaBinomica(element) {
         var result = "Forma binómica: ";
         if (this.real !== 0) {
             result += (this.real).toFixed(2) + " ";
@@ -45,7 +50,7 @@ class Complex {
         if (this.real === 0 && this.imaginary === 0) {
             result = 'Forma binómica: 0';
         }
-        binomicaH3.innerHTML = result;
+        element.innerHTML = result;
     }
 }
 
@@ -67,8 +72,8 @@ function sum() {
     var z3 = new Complex(rez3, imz3);
 
     //Prints result
-    z3.printFormaBinomica();
-    z3.printPhasorForm();
+    z3.printFormaBinomica(binomicaH3);
+    z3.printPhasorForm(fasorialH3);
 }
 
 //complex substraction
@@ -83,8 +88,8 @@ function substract() {
     var z3 = new Complex(rez3, imz3);
 
     //Prints result
-    z3.printFormaBinomica();
-    z3.printPhasorForm();
+    z3.printFormaBinomica(binomicaH3);
+    z3.printPhasorForm(fasorialH3);
 
 }
 
@@ -100,8 +105,8 @@ function multiply() {
     var z3 = new Complex(rez3, imz3);
 
     //Prints result
-    z3.printFormaBinomica();
-    z3.printPhasorForm();
+    z3.printFormaBinomica(binomicaH3);
+    z3.printPhasorForm(fasorialH3);
 
 }
 
@@ -124,8 +129,8 @@ function divide() {
         var z3 = new Complex(rez3, imz3);
 
         //Prints result
-        z3.printFormaBinomica();
-        z3.printPhasorForm();
+        z3.printFormaBinomica(binomicaH3);
+        z3.printPhasorForm(fasorialH3);
 
 
     } catch (e) {
@@ -133,9 +138,30 @@ function divide() {
     }
 }
 
+//transforms from binomial to phasor
+function toFas() {
+    var z = new Complex(Number(rez.value), Number(imz.value));
+    z.printPhasorForm(fasorialTransH3);
+
+}
+
+//clears results and inputs
+function clear() {
+    binomicaH3.innerHTML = '';
+    fasorialH3.innerHTML = '';
+
+    rez1.value = '';
+    rez2.value = '';
+    imz1.value = '';
+    imz2.value = '';
+
+}
+
 sumBtn.addEventListener("click", sum);
 subsBtn.addEventListener("click", substract);
 prodBtn.addEventListener("click", multiply);
 divBtn.addEventListener("click", divide);
+clearBtn.addEventListener("click", clear);
+binToFasBtn.addEventListener("click", toFas);
 
 
