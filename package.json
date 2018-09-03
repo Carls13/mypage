@@ -1,0 +1,23 @@
+{
+  "name": "public_html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "build": "browserify complex.js > bundle.js > live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carls13/mypage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carls13/mypage/issues"
+  },
+  "homepage": "https://github.com/Carls13/mypage#readme",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
