@@ -12,7 +12,9 @@ img{
 .btn{
     background:#024656 !important;
 }
-
+body {
+    font-family: 'Pangolin', cursive;
+}
 .welcome-image{
 
     width:100%;

@@ -8,9 +8,10 @@ img{
 .btn{
     background:#024656 !important;
 }
-/*.feature-title{
-    font-weight: bold;
-}*/
+body{
+    font-family: 'Pangolin', cursive;
+
+}
 main{
     padding-top:65px;
 }
@@ -31,6 +32,11 @@ h1{
 }
 img:hover{
     transform: scale(1.1);
+}
+hr {
+    max-width: 65px;
+    border-width: 3px;
+    border-color: #024656; 
 }
 
 
