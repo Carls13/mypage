@@ -1,19 +1,26 @@
 //Gets elements
+//Inputs
 const rez1 = document.getElementById('rez1');
 const rez2 = document.getElementById('rez2');
 const rez = document.getElementById('rez');
 const imz1 = document.getElementById('imz1');
 const imz2 = document.getElementById('imz2');
 const imz = document.getElementById('imz');
+
+//Buttons
 const sumBtn = document.getElementById('sum');
 const subsBtn = document.getElementById('substraction');
 const prodBtn = document.getElementById('product');
 const divBtn = document.getElementById('division');
 const clearBtn = document.getElementById('clear');
 const binToFasBtn = document.getElementById('binToFasBtn');
+const fasToBinBtn = document.getElementById('fasToBinBtn');
+
+//h3 results
 const binomicaH3 = document.getElementById('binomicaResult');
 const fasorialH3 = document.getElementById('fasorialResult');
 const fasorialTransH3 = document.getElementById('binTransResult');
+const binomialTransH3 = document.getElementById('fasTransResult');
 
 //Complex number
 class Complex {
@@ -26,7 +33,7 @@ class Complex {
     }
     //prints in phasor form
     printPhasorForm(element) {
-        var result = `Forma fasorial: ${Number(this.module).toFixed(2)} 
+        var result = `Phasor form: ${Number(this.module).toFixed(2)} 
                         ∠${Number(this.argument).toFixed(2)}°`;
 
         element.innerHTML = result;
@@ -34,7 +41,7 @@ class Complex {
     }
     //prints in binomial form
     printFormaBinomica(element) {
-        var result = "Forma binómica: ";
+        var result = "Binomial form: ";
         if (this.real !== 0) {
             result += (this.real).toFixed(2) + " ";
         }
@@ -48,7 +55,7 @@ class Complex {
             result += (this.imaginary).toFixed(2) + "j";
         }
         if (this.real === 0 && this.imaginary === 0) {
-            result = 'Forma binómica: 0';
+            result = 'Binomial form: 0';
         }
         element.innerHTML = result;
     }
@@ -138,11 +145,18 @@ function divide() {
     }
 }
 
+
 //transforms from binomial to phasor
 function toFas() {
     var z = new Complex(Number(rez.value), Number(imz.value));
     z.printPhasorForm(fasorialTransH3);
 
+}
+
+//transforms from binomial to phasor
+function toBin() {
+    var z = new Complex(Number(rez.value), Number(imz.value));
+    z.printFormaBinomica(binomialTransH3);
 }
 
 //clears results and inputs
@@ -157,11 +171,12 @@ function clear() {
 
 }
 
+//Events
 sumBtn.addEventListener("click", sum);
 subsBtn.addEventListener("click", substract);
 prodBtn.addEventListener("click", multiply);
 divBtn.addEventListener("click", divide);
 clearBtn.addEventListener("click", clear);
 binToFasBtn.addEventListener("click", toFas);
-
+fasToBinBtn.addEventListener("click", toBin);
 

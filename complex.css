@@ -42,11 +42,13 @@ h4 {
 .btn{
     background:#024656 !important;
 }
-.btn:hover{
-    transform: scale(1.1);
 
 
+.btn:active {
+   background:#024656 !important;
+   transform: translateY(4px);
 }
+
 #binomicaResult{
     text-align:left;
 }
