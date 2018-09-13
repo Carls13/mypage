@@ -6,6 +6,8 @@ const rez = document.getElementById('rez');
 const imz1 = document.getElementById('imz1');
 const imz2 = document.getElementById('imz2');
 const imz = document.getElementById('imz');
+const modz = document.getElementById('modz');
+const argz = document.getElementById('argz');
 
 //Buttons
 const sumBtn = document.getElementById('sum');
@@ -24,12 +26,19 @@ const binomialTransH3 = document.getElementById('fasTransResult');
 
 //Complex number
 class Complex {
-    constructor(real, imaginary) {
-        this.real = real;
-        this.imaginary = imaginary;
-        this.module = Math.sqrt(Math.pow(real, 2) + Math.pow(imaginary, 2));
+    constructor(real = null, imaginary = null, module = null, argument = null) {
+        this.real = real ? real : null;
+        this.imaginary = imaginary ? imaginary : null;
+        this.module = module? module : Math.sqrt(Math.pow(real, 2) + Math.pow(imaginary, 2));
         //Argument in degrees
-        this.argument = toDegrees(Math.atan2(imaginary, real));
+        this.argument = argument ? argument : toDegrees(Math.atan2(imaginary, real));
+        
+        if (!this.real){
+            this.real = this.module*Math.cos(toRadians(this.argument));
+        }
+        if (!this.imaginary){
+            this.imaginary = this.module*Math.sin(toRadians(this.argument));
+        }
     }
     //prints in phasor form
     printPhasorForm(element) {
@@ -61,10 +70,16 @@ class Complex {
     }
 }
 
+
 //transforms radians to degrees
 function toDegrees(radians) {
     var degrees = radians * 180 / Math.PI;
     return degrees;
+}
+//transforms degrees to radians
+function toRadians(degrees) {
+    var radians = degrees * Math.PI/180;
+    return radians;
 }
 
 //complex sum
@@ -153,9 +168,9 @@ function toFas() {
 
 }
 
-//transforms from binomial to phasor
+//transforms from phasor to binomial
 function toBin() {
-    var z = new Complex(Number(rez.value), Number(imz.value));
+    var z = new Complex(null,null, Number(modz.value), Number(argz.value));
     z.printFormaBinomica(binomialTransH3);
 }
 
